@@ -68,6 +68,28 @@ fun Task10() {
     // В первом Column используй Arrangement.Start и Alignment.Start, во втором - Arrangement.Center и Alignment.CenterHorizontally, в третьем - Arrangement.SpaceBetween и Alignment.End.
 }
 
+@Composable
+fun Task11() {
+    // TODO: Создай Column, в котором будет много элементов, чтобы была вертикальная прокрутка.
+    // TODO: Используй Modifier.verticalScroll() для прокрутки.
+}
+
+@Composable
+fun Task12() {
+    // TODO: Создай LazyColumn.
+    // TODO: В начале списка добавь item { Text("Начало") }.
+    // TODO: Затем добавь список строк через items().
+    // TODO: В конце списка добавь item { Text("Конец") }.
+}
+
+@Composable
+fun Task13() {
+    // TODO: Создай Column, в котором будут 3 блока:
+    // TODO: - Первый занимает 20% высоты.
+    // TODO: - Второй занимает 30% высоты.
+    // TODO: - Третий занимает оставшиеся 50%.
+    // TODO: Используй weight() для распределения пространства.
+}
 
 @Preview(showBackground = true)
 @Composable
