@@ -108,7 +108,7 @@ fun Task7() {
 fun Task8() {
     // TODO: Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
     // У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про любимую еду.
-    // В первом Column используй Arrangement.Start, во втором - Arrangement.Center, в третьем - Arrangement.SpaceBetween.
+    // В первом Column используй Arrangement.Top, во втором - Arrangement.Center, в третьем - Arrangement.SpaceBetween.
 }
 
 @Composable
@@ -122,7 +122,7 @@ fun Task9() {
 fun Task10() {
     // TODO: Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
     // У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про науки)).
-    // В первом Column используй Arrangement.Start и Alignment.Start, во втором - Arrangement.Center и Alignment.CenterHorizontally, в третьем - Arrangement.SpaceBetween и Alignment.End.
+    // В первом Column используй Arrangement.Top и Alignment.Start, во втором - Arrangement.Center и Alignment.CenterHorizontally, в третьем - Arrangement.SpaceBetween и Alignment.End.
 }
 
 @Composable
@@ -159,7 +159,7 @@ fun PreviewColumnTasks() {
  * - Column располагает элементы внутри сверху вниз.
  *
  * - Arrangement управляет распределением элементов внутри Column:
- *   - Arrangement.Start — элементы сжаты к началу.
+ *   - Arrangement.Top — элементы сжаты к верху.
  *   - Arrangement.Center — элементы расположены по центру.
  *   - Arrangement.End — элементы сжаты к концу.
  *   - Arrangement.SpaceBetween — элементы распределены равномерно.
