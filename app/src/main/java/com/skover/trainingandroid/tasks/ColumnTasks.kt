@@ -14,9 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,10 +25,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontVariation.weight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.skover.trainingandroid.R
 
 //запускать приложение не надо.
@@ -46,6 +42,7 @@ fun Task1() {
     Text(text = "Середина ")
     Spacer(modifier = Modifier.height(10.dp))
     Text(text = "Низ")
+    //тебе надо проверять задания в превью внизу. в этом задании у тебя текста налепились друг на друга потому что нет родительского Колумна.
 }
 
 @Composable
@@ -77,7 +74,7 @@ fun Task2() {
 @Composable
 fun Task3() {
     // TODO: Сделай Колумн, в котором еще один колумн который 80х80, красного цвета и находится справа посередине экрана
-    Column {
+    Column(Modifier.fillMaxSize()) {
         Column(
             Modifier
                 .width(80.dp)
@@ -439,7 +436,7 @@ fun Task13() {
 @Composable
 fun PreviewColumnTasks() {
     //сюда пишете задание которое сейчас делаете, чтоб смотреть что получилось
-    Task4()
+    Task3()
 }
 
 @Preview
