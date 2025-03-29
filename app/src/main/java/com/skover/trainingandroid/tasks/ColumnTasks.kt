@@ -23,11 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.Cyan
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight.Companion.W200
+import androidx.compose.ui.text.font.FontWeight.Companion.W600
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.skover.trainingandroid.R
+import com.skover.trainingandroid.ui.theme.Purple40
 
 
 //запускать приложение не надо.
@@ -37,10 +42,9 @@ import com.skover.trainingandroid.R
 
 @Composable
 fun Task1() {
-    // TODO: Сделай 3 текста которые располагаются сверху вниз.
+    // ✅ Сделай 3 текста которые располагаются сверху вниз.
+    //не растянуто на весь экран но ладно, этого не было в требованиях
     Column {
-
-
         Text(text = "Вверх")
         Spacer(modifier = Modifier.height(10.dp))
         Text(text = "Середина ")
@@ -53,6 +57,7 @@ fun Task1() {
 
 @Composable
 fun Task2() {
+    //а где само задание? ну ладно)) ✅
     Column(
         modifier = Modifier,
         verticalArrangement = Arrangement.Center,
@@ -84,6 +89,7 @@ fun Task2() {
 @Composable
 fun Task3() {
     // TODO: Сделай Колумн, в котором еще один колумн который 80х80, красного цвета и находится справа посередине экрана
+    // ❌ он не посередине экрана а оказался сверху
     Column(Modifier.fillMaxSize()) {
 
         Column(
@@ -103,30 +109,35 @@ fun Task3() {
 @Composable
 fun Task4() {
     // TODO: Сделай экран в котором 3 колумна сверху вниз. все они занимают всю ширину. Первый по высоте 50дп. второй 100дп. а третий всё остальное пространство. пусть они будут 3х цветов как пельмени которые мы лепили))
-    Column {
-        Modifier
-            .fillMaxWidth()
-            .height(50.dp)
-            .background(Color(0xFF800080))
-    }
-    Spacer(modifier = Modifier.height(10.dp))
-    Column {
-        Modifier
-            .fillMaxWidth()
-            .height(100.dp)
-            .background(Color(0xFFFFA500))
-    }
-    Spacer(modifier = Modifier.height(10.dp))
-    Column {
-        Modifier
-            .weight(1f)
-            .background(Color(0xFF40E0D0))
+    // ❌ надо доделать
+    Column(Modifier.fillMaxSize()) {
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .background(Color(0xFF800080))
+                .height(50.dp)
+        ) {
+
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Column { //todo я тебе присылал кружочек - доделай и тут тоже
+            Modifier
+                .fillMaxWidth()
+                .height(100.dp)
+                .background(Color(0xFFFFA500))
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Column {
+            Modifier
+                .weight(1f)
+                .background(Color(0xFF40E0D0))
+        }
     }
 }
 
 @Composable
 fun Task5() {
-    // TODO: Выровняй 2 кнопки внутри Column по центру экрана.
+    // ✅ Выровняй 2 кнопки внутри Column по центру экрана.
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -144,60 +155,49 @@ fun Task5() {
 
 @Composable
 fun Task6() {
-    // TODO: Сделай Колумн который занимает весь экран, у него отступы со всех сторон 16.дп и он оранжевый
-    // TODO: а внутри него 3 колумна белых, занимающих всё доступное пространство одинаковые по размеру и у них тоже пэддинг 16.дп
+    // ✅ Сделай Колумн который занимает весь экран, у него отступы со всех сторон 16.дп и он оранжевый
+    // ✅ а внутри него 3 колумна белых, занимающих всё доступное пространство одинаковые по размеру и у них тоже пэддинг 16.дп
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
             .background(Color(0xFFFFA500))
     ) {
-
         Column(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
                 .padding(16.dp)
                 .background(Color.White)
-        ) {
-
-        }
-
-
+        ) {}
         Column(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
                 .padding(16.dp)
                 .background(Color.White)
-        ) {
-
-        }
-
-
+        ) {}
         Column(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
                 .padding(16.dp)
                 .background(Color.White)
-        ) {
-
-        }
+        ) {}
     }
 }
 
 @Composable
 fun Task7() {
-    // TODO: Сделай родительский Колумн на весь экран. а в нем колумн 50х50 дп. Добавь дочернему Column рамку толщиной 2dp черного цвета.
+    // ✅ Сделай родительский Колумн на весь экран. а в нем колумн 50х50 дп. Добавь дочернему Column рамку толщиной 2dp черного цвета.
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .border(2.dp, Color.Black)
+            .border(2.dp, Black)
     ) {
         Column(
             modifier = Modifier
-                .border(2.dp, Color.Black)
+                .border(2.dp, Black)
                 .size(50.dp)
                 .background(Color.White)
         ) {
@@ -208,20 +208,19 @@ fun Task7() {
 
 @Composable
 fun Task8() {
-    // TODO: Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
-    // У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про любимую еду.
-    // В первом Column используй Arrangement.Top, во втором - Arrangement.Center, в третьем - Arrangement.SpaceBetween.
+    // ✅ Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
+    // ✅ У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про любимую еду.
+    // ✅ В первом Column используй Arrangement.Top, во втором - Arrangement.Center, в третьем - Arrangement.SpaceBetween.
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-
         Column(
             modifier = Modifier
-                .width(1000.dp)
+                .width(1000.dp) //лучше fillMaxWidth()
                 .weight(1f)
                 .padding(16.dp)
                 .clip(RoundedCornerShape(15.dp))
-                .background(Color.Cyan),
+                .background(Cyan),
             verticalArrangement = Arrangement.Top
         ) {
             Text(text = "Чай оооочень вкусный")
@@ -230,8 +229,6 @@ fun Task8() {
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Обожаю чай")
         }
-
-
         Column(
             modifier = Modifier
                 .width(1000.dp)
@@ -247,15 +244,13 @@ fun Task8() {
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Такой мягкий вкусный прям таял во рту")
         }
-
-
         Column(
             modifier = Modifier
                 .width(1000.dp)
                 .weight(1f)
                 .padding(16.dp)
                 .clip(RoundedCornerShape(15.dp))
-                .background(Color.Unspecified),
+                .background(Color.Unspecified), //Color.Unspecified переводится как Цвет.НеУказан :) ну ладно)
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(text = "Мины в лаваше")
@@ -269,13 +264,10 @@ fun Task8() {
 
 @Composable
 fun Task9() {
-    // TODO: Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
-    // У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про музыку.
-    // В первом Column используй Alignment.Start, во втором - Alignment.CenterHorizontally, в третьем - Alignment.End.
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-
+    // ✅ Сделай родительский Column. В нем 3 Column, занимающие одинаковое пространство, с отступами 16.dp и разными цветами фона.
+    // ✅ У каждого Column должно быть скругление углов. Внутри каждого Column размести 3 текста, что нибудь про музыку.
+    // ✅ В первом Column используй Alignment.Start, во втором - Alignment.CenterHorizontally, в третьем - Alignment.End.
+    Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .width(1000.dp)
@@ -287,7 +279,7 @@ fun Task9() {
         ) {
             Text(text = "Хочу закончить одну песню")
             Spacer(modifier = Modifier.height(20.dp))
-            Text(text = "Ну по идеии она уже закончена")
+            Text(text = "Ну по идее она уже закончена")
             Spacer(modifier = Modifier.height(20.dp))
             Text(text = "Осталось сыграть")
         }
@@ -316,7 +308,7 @@ fun Task9() {
                 .weight(1f)
                 .padding(16.dp)
                 .clip(RoundedCornerShape(15.dp))
-                .background(Color.Cyan),
+                .background(Cyan),
             horizontalAlignment = Alignment.End
         ) {
             Text(text = "Стрiли Летять")
@@ -332,10 +324,8 @@ fun Task9() {
 
 @Composable
 fun Task10() {
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-
+    //✅ да что ж такое опять задание стер
+    Column(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .width(1000.dp)
@@ -378,7 +368,7 @@ fun Task10() {
                 .weight(1f)
                 .padding(16.dp)
                 .clip(RoundedCornerShape(12.dp))
-                .background(Color.Cyan),
+                .background(Cyan),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.End
         ) {
@@ -396,17 +386,16 @@ fun Task10() {
 fun Task11() {
     // TODO: Создай Column, в котором будет много элементов, чтобы была вертикальная прокрутка.
     // TODO: Используй Modifier.verticalScroll() для прокрутки.
-
+    // ❌ я тут просил использовать не LazyColumn а именно Column с ветрикальным скроллом
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
+            .background(Black)
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(30) { index ->
-
             Skover()
         }
     }
@@ -415,10 +404,8 @@ fun Task11() {
 
 @Composable
 fun Task12() {
-    // TODO: Создай LazyColumn.
-    // TODO: В начале списка добавь item { Text("Начало") }.
-    // TODO: Затем добавь список строк через items().
-    // TODO: В конце списка добавь item { Text("Конец") }.
+    // ✅ Создай LazyColumn. В начале списка добавь item { Text("Начало") }.
+    // ✅ Затем добавь список строк через items(). В конце списка добавь item { Text("Конец") }.
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -453,11 +440,9 @@ fun Task12() {
 
 @Composable
 fun Task13() {
-    // TODO: Создай Column, в котором будут 3 блока:
-    // TODO: - Первый занимает 20% высоты.
-    // TODO: - Второй занимает 30% высоты.
-    // TODO: - Третий занимает оставшиеся 50%.
-    // TODO: Используй weight() для распределения пространства.
+    // ✅ Создай Column, в котором будут 3 блока: Первый занимает 20% высоты.
+    // ✅ Второй занимает 30% высоты. Третий занимает оставшиеся 50%.
+    // ✅ Используй weight() для распределения пространства.
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -496,16 +481,9 @@ fun PreviewColumnTasks() {
     Task13()
 }
 
-@Preview
 @Composable
 fun Skover() {
-    Skover()
-}
-
-@Preview
-@Composable
-fun Skover2() {
-    Skover2()
+    Text("Skover", fontSize = 40.sp, fontWeight = W600, color = Cyan)
 }
 /**
  * Справка по Column и Modifier:
